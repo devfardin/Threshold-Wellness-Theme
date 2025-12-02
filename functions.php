@@ -6,8 +6,7 @@
 // Security Constants
 define('THRESHOLD_WELLNESS_VERSION', '1.0.0');
 define('THRESHOLD_WELLNESS_DIR', __DIR__ . '/includes/');
-define('THRESHOLD_WELLNESS_URL', get_stylesheet_directory_uri());
-define('THRESHOLD_WELLNESS_PATH', get_stylesheet_directory_uri());
+define('THRESHOLD_WELLNESS_SHORTCODE_DIR', __DIR__ . '/includes/shortcodes/');
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
