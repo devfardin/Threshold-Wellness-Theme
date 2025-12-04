@@ -21,7 +21,14 @@ class ThresholdWellnessAssets {
         // Main CSS with optimization
         wp_enqueue_style(
             'threshold-wellness-main',
-            THRESHOLD_WELLNESS_STYLE_URI . '/assets/css/main.css',
+            THRESHOLD_WELLNESS_STYLE_URI . 'main.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
+        wp_enqueue_style(
+            'threshold-wellness-home',
+            THRESHOLD_WELLNESS_STYLE_URI . 'home.css',
             [],
             THRESHOLD_WELLNESS_VERSION,
             'all'
@@ -32,7 +39,7 @@ class ThresholdWellnessAssets {
     public function enqueue_scripts() {
         wp_enqueue_script(
             'threshold-wellness-main',
-            THRESHOLD_WELLNESS_SCRIPT_URI . '/assets/js/main.js',
+            THRESHOLD_WELLNESS_SCRIPT_URI . 'js/main.js',
             ['jquery'],
             THRESHOLD_WELLNESS_VERSION,
             true

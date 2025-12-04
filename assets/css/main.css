@@ -1,3 +1,6 @@
+:root{
+  --Primary-Yellow: FFD700;
+}
 .row-item {
   transition: 0.4s !important; 
   transform: translateY(0);

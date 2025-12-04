@@ -1,0 +1,25 @@
+/* we have all the color  */
+
+.just_remember {
+    --e-global-color-primary: #FFD700;
+    --e-global-color-secondary: #FFC700; /* ellow Dark */
+    --e-global-color-text: #1A1A1A; /*Primary Text / Charcoal */
+    --e-global-color-accent: #2C2C2C; /* Grey 900 (Dark Grey) */
+    --e-global-color-kadence1: #FFC700;
+    --e-global-color-kadence2: #FFE44D; /* Yellow Light */
+    --e-global-color-kadence4: #4A4A4A; /* Grey 700 (Medium Grey) */
+    --e-global-color-kadence5: #E5E5E5; /*Grey 200 (Light Grey) */
+    --e-global-color-kadence6: #F5F5F5; /* Grey 50 (Off White) */
+    --e-global-color-kadence7: #000000; /* Pure Black */
+    --e-global-color-kadence8: #F7FAFC;
+    --e-global-color-kadence9: #ffffff;
+}
+
+.threshold-subheading .elementor-button{
+  backdrop-filter: blur(32px);
+  border-radius: 9999px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.elementor-element .elementor-heading-title span{
+    color: var(--e-global-color-primary);
+}
