@@ -7,6 +7,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+define('THRESHOLD_WELLNESS_STYLE_URI', get_stylesheet_directory_uri() . '/assets/css/');
+define('THRESHOLD_WELLNESS_SCRIPT_URI', get_stylesheet_directory_uri() . '/assets/js/');
+
 class ThresholdWellnessAssets {
     
     public function __construct() {
@@ -18,7 +21,7 @@ class ThresholdWellnessAssets {
         // Main CSS with optimization
         wp_enqueue_style(
             'threshold-wellness-main',
-            THRESHOLD_WELLNESS_URL . '/assets/css/main.css',
+            THRESHOLD_WELLNESS_STYLE_URI . '/assets/css/main.css',
             [],
             THRESHOLD_WELLNESS_VERSION,
             'all'
@@ -29,7 +32,7 @@ class ThresholdWellnessAssets {
     public function enqueue_scripts() {
         wp_enqueue_script(
             'threshold-wellness-main',
-            THRESHOLD_WELLNESS_URL . '/assets/js/main.js',
+            THRESHOLD_WELLNESS_SCRIPT_URI . '/assets/js/main.js',
             ['jquery'],
             THRESHOLD_WELLNESS_VERSION,
             true

@@ -17,7 +17,6 @@ class ThresholdWellnessFunctions {
         $this->load_dependencies();
         $this->init();
     }
-    
     public function load_dependencies() {
         require_once( THRESHOLD_WELLNESS_DIR . 'enqueue.php');
     }
