@@ -39,7 +39,7 @@ class ThresholdWellnessAssets {
     public function enqueue_scripts() {
         wp_enqueue_script(
             'threshold-wellness-main',
-            THRESHOLD_WELLNESS_SCRIPT_URI . 'js/main.js',
+            THRESHOLD_WELLNESS_SCRIPT_URI . 'main.js',
             ['jquery'],
             THRESHOLD_WELLNESS_VERSION,
             true
