@@ -33,6 +33,13 @@ class ThresholdWellnessAssets {
             THRESHOLD_WELLNESS_VERSION,
             'all'
         );
+        wp_enqueue_style(
+            'custom-page-header',
+            THRESHOLD_WELLNESS_STYLE_URI . 'custom-page-header.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
         
     }
     

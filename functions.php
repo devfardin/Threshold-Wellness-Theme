@@ -19,10 +19,12 @@ class ThresholdWellnessFunctions {
     }
     public function load_dependencies() {
         require_once( THRESHOLD_WELLNESS_DIR . 'enqueue.php');
+        require_once( THRESHOLD_WELLNESS_DIR . 'custom-page-header.php');
     }
     
     public function init() {
         new ThresholdWellnessAssets();
+       new Custom_Page_Header();
     }
 }
 
