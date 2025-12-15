@@ -22,14 +22,12 @@ class ThresholdWellnessFunctions {
         require_once( THRESHOLD_WELLNESS_DIR . 'custom-page-header.php');
         require_once( THRESHOLD_WELLNESS_DIR . 'customizer-page-header.php');
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'blog-posts.php');
-        require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'categories-posts.php');
     }
     
     public function init() {
        new ThresholdWellnessAssets();
        new Custom_Page_Header();
        new ThresholdBlogPostsShortcode();
-       new ThresholdCategoriesPostsShortcode();
     }
 }
 

@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 <?php get_template_part('includes/page-header'); ?>
-<div class="cfx-body">
+<section class="hero-container site-container">
     <div id="content">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -19,8 +19,9 @@ get_header();
         );
         $query = new \WP_Query($args);
         ?>
-        <section class="threshold_post_container">
-            <div class="threshold_post_wrapper">
+        <div class="threshold-container">
+            <div class="threshold-container-inner">
+                <div class="threshold_post_wrapper">
                 <?php if ($query->have_posts()): ?>
                     <div class="threshold_post__row">
                         <?php while ($query->have_posts()):
@@ -113,8 +114,9 @@ get_header();
                     <?php
                 endif;
                 ?>
+                </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 

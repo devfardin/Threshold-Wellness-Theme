@@ -6,7 +6,7 @@
 function threshold_page_header_customizer($wp_customize) {
     // Add Page Header Section
     $wp_customize->add_section('threshold_page_header', array(
-        'title' => __('Page Header Settings', 'threshold-wellness'),
+        'title' => __('Global Page Header Settings', 'threshold-wellness'),
         'priority' => 30,
     ));
 
@@ -34,6 +34,9 @@ function threshold_page_header_customizer($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'page_header_bg_image', array(
         'label' => __('Background Image', 'threshold-wellness'),
         'section' => 'threshold_page_header',
+        'active_callback' => function() {
+            return get_theme_mod('page_header_bg_type', 'image') === 'image';
+        },
     )));
 
     // Background Video Control
@@ -44,6 +47,9 @@ function threshold_page_header_customizer($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Upload_Control($wp_customize, 'page_header_bg_video', array(
         'label' => __('Background Video (MP4)', 'threshold-wellness'),
         'section' => 'threshold_page_header',
+        'active_callback' => function() {
+            return get_theme_mod('page_header_bg_type', 'image') === 'video';
+        },
     )));
 }
 

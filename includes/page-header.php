@@ -30,6 +30,7 @@ if ( $bg_type === 'video' && $bg_video ) {
     echo '<div class="custom-page-header-bg" style="background-image: url(' . esc_url($bg_image) . ');"></div>';
 }
 
+echo '<div class="custom-page-header-overlay"></div>';
 echo '<div class="entry-content-wrap">';
 echo '<h1 class="custom-page-title">' . esc_html($title) . '</h1>';
 if ( $subtitle ) {
