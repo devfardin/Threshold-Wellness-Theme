@@ -32,7 +32,7 @@ get_header();
                                 <div class="threshold_post__feature">
                                     <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"
                                         aria-label="More about <?php echo get_the_title(); ?>">
-                                        <?php the_post_thumbnail(''); ?>
+                                        <?php the_post_thumbnail('medium_large'); ?>
                                     </a>
                                 </div>
                                 <!-- Post Info -->
@@ -56,39 +56,22 @@ get_header();
                                         </svg>
                                     </div>
                                     <!-- post author and Date -->
-                                    <div class="post_author_date_wrapper">
-                                        <!-- post author -->
-                                        <?php 
-                                        $author_id = get_the_author_meta('ID');
-                                        $author_name = get_the_author_meta('display_name', $author_id);
-                                        $avatar_url = get_avatar_url($author_id);
-                                        
-                                        $name_parts = explode(' ', trim($author_name));
-                                        $first_initial = !empty($name_parts[0]) ? strtoupper($name_parts[0][0]) : '';
-                                        $last_initial = !empty($name_parts[1]) ? strtoupper($name_parts[1][0]) : '';
-                                        $initials = $first_initial . $last_initial;
-                                        
-                                        // Check if it's a default gravatar (mystery person)
-                                        $is_default_avatar = strpos($avatar_url, 'd=mm') !== false || strpos($avatar_url, 'd=blank') !== false || strpos($avatar_url, 'd=mystery') !== false;
-                                        ?>
-                                         <a href="<?php echo get_author_posts_url($author_id); ?>" class="blog_post_author_wrapper">
-                                            <?php if ($is_default_avatar): ?>
-                                                <div class='blog_post__author_initials'><?php echo $initials; ?></div>
-                                            <?php else: ?>
-                                                <img class='blog_post__author_avatar' src="<?php echo $avatar_url; ?>"
-                                                    alt="<?php echo $author_name; ?>" 
-                                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                                <div class='blog_post__author_initials' style='display:none;'><?php echo $initials; ?></div>
-                                            <?php endif; ?>
-                                            <h3 class='auther_display_name'>
-                                                <?php echo $author_name; ?>
-                                            </h3>
-                                        </a>
-                                        <div class="blog_post_date">
-                                            <?php $post_time = get_post_time(); ?>
-                                            <span> <?php echo date("d M Y", $post_time); ?> </span>
-                                        </div>
+                                      <div class="post_author_date_wrapper">
+                                    <!-- post author -->
+                                    <?php $author_id = get_the_author_meta('ID'); ?>
+                                     <a href="<?php echo get_author_posts_url($author_id); ?>" class="blog_post_author_wrapper">
+                                        <img class='blog_post__author_avatar' src="<?php echo get_avatar_url($author_id) ?>"
+                                            alt="<?php echo get_the_author_meta('display_name', $author_id) ?>">
+
+                                        <h3 class='auther_display_name'>
+                                            <?php echo get_the_author_meta('display_name', $author_id); ?>
+                                        </h3>
+                                    </a>
+                                    <div class="blog_post_date">
+                                        <?php $post_time = get_post_time(); ?>
+                                        <span> <?php echo date("d M Y", $post_time); ?> </span>
                                     </div>
+                                </div>
                                 </div>
                             </article>
                         <?php endwhile; ?>         <?php wp_reset_postdata(); ?>

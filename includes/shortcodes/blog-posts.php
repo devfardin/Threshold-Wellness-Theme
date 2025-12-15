@@ -26,7 +26,7 @@ class ThresholdBlogPostsShortcode{
                             <div class="threshold_post__feature">
                                 <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"
                                     aria-label="More about <?php echo get_the_title(); ?>">
-                                    <?php the_post_thumbnail(''); ?>
+                                    <?php the_post_thumbnail('medium_large'); ?>
                                 </a>
                                 <?php
                                 $categories = get_the_terms(get_the_ID(), 'category');
