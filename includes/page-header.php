@@ -24,7 +24,10 @@ if (is_category()) {
 } else if(is_404()) {
     $title = get_queried_object()->display_name;
     $subtitle = '';
-} 
+} else if(is_single()){
+    $title = get_the_title();
+    $subtitle = '';
+}
 
 ?>
 
