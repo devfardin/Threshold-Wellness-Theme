@@ -2,6 +2,12 @@
 /**
  * Custom Page Header Manager for Kadence Theme
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
+
 class Custom_Page_Header {
 
     public function __construct() {

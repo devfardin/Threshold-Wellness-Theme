@@ -10,12 +10,12 @@ get_header();
     <div id="content">
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        $current_category = get_queried_object();
+        $current_author = get_queried_object();
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
             'paged' => $paged,
-            'cat' => $current_category->term_id,
+            'author' => $current_author->ID,
         );
         $query = new \WP_Query($args);
         ?>

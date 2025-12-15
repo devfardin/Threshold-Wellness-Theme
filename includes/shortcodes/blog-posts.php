@@ -24,9 +24,9 @@ class ThresholdBlogPostsShortcode{
 
                             <!-- Post Feature image -->
                             <div class="threshold_post__feature">
-                                <a href="<?php echo get_the_permalink(); ?>" rel="bookmark"
-                                    aria-label="More about <?php echo get_the_title(); ?>">
-                                    <?php the_post_thumbnail('medium_large'); ?>
+                                <a href="<?php echo esc_attr(get_the_permalink())?>" rel="bookmark"
+                                    aria-label="More about <?php echo esc_attr(get_the_title()); ?>">
+                                    <?php esc_html(the_post_thumbnail('medium_large')) ?>
                                 </a>
                                 <?php
                                 $categories = get_the_terms(get_the_ID(), 'category');
@@ -44,17 +44,16 @@ class ThresholdBlogPostsShortcode{
                             <div class="blog_post_info_container">
                                 <!-- post title -->
                                 <h1 class="blog_post_title">
-                                    <?php echo substr(get_the_title(), 0, 50) . '...'; ?>
+                                    <?php echo esc_html(substr(get_the_title(), 0, 50)) . '...'; ?>
                                 </h1>
                                 <!-- post content -->
                                 <div class="blog_post_content_wrapper">
                                     <p class="blog_post_content"> <?php
-                                    echo substr(get_the_content(), 0, 100) . '...'; ?>
+                                    echo esc_html(substr(get_the_content(), 0, 100) ). '...'; ?>
                                     </p>
                                 </div>
                                 <div class="blog_post_read_more_btn">
                                     <a href="<?php echo get_the_permalink(); ?>">Read More</a>
-                                   <i aria-hidden="true" class=" ti-angle-right"></i>
                                 </div>
                                 <!-- post author and Date -->
                                 <div class="post_author_date_wrapper">

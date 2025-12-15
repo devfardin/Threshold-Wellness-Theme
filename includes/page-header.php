@@ -15,10 +15,17 @@ $bg_video = get_theme_mod('page_header_bg_video');
 if (is_category()) {
     $title = single_cat_title('', false);
     $subtitle = category_description();
-} else {
-    $title = get_the_title();
+} else if(is_author()) {
+    $title = get_queried_object()->display_name;
     $subtitle = '';
-}
+} else if(is_search()) {
+    $title = get_queried_object()->display_name;
+    $subtitle = '';
+} else if(is_404()) {
+    $title = get_queried_object()->display_name;
+    $subtitle = '';
+} 
+
 ?>
 
 <?php
