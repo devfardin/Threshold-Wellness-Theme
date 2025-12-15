@@ -20,6 +20,7 @@ class ThresholdWellnessFunctions {
     public function load_dependencies() {
         require_once( THRESHOLD_WELLNESS_DIR . 'enqueue.php');
         require_once( THRESHOLD_WELLNESS_DIR . 'custom-page-header.php');
+        require_once( THRESHOLD_WELLNESS_DIR . 'customizer-page-header.php');
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'blog-posts.php');
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'categories-posts.php');
     }

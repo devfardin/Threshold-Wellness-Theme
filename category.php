@@ -5,9 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 ?>
-<?php 
-get_template_part('includes/page-header');
-?>
+<?php get_template_part('includes/page-header'); ?>
 <div class="cfx-body">
     <div id="content">
         <?php
