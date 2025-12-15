@@ -44,21 +44,17 @@ class ThresholdBlogPostsShortcode{
                             <div class="blog_post_info_container">
                                 <!-- post title -->
                                 <h1 class="blog_post_title">
-                                    <?php echo substr(get_the_title(), 0, 60) . '...'; ?>
+                                    <?php echo substr(get_the_title(), 0, 50) . '...'; ?>
                                 </h1>
                                 <!-- post content -->
                                 <div class="blog_post_content_wrapper">
                                     <p class="blog_post_content"> <?php
-                                    echo substr(get_the_content(), 0, 130) . '...'; ?>
+                                    echo substr(get_the_content(), 0, 100) . '...'; ?>
                                     </p>
                                 </div>
                                 <div class="blog_post_read_more_btn">
                                     <a href="<?php echo get_the_permalink(); ?>">Read More</a>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="11" viewBox="0 0 8 11" fill="none">
-                                        <path
-                                            d="M1.58331 0.25L0.232056 1.48375L4.62122 5.5L0.232056 9.51625L1.58331 10.75L7.33331 5.5L1.58331 0.25Z"
-                                            fill="#622743" />
-                                    </svg>
+                                   <i aria-hidden="true" class=" ti-angle-right"></i>
                                 </div>
                                 <!-- post author and Date -->
                                 <div class="post_author_date_wrapper">

@@ -41,14 +41,14 @@
 
 }
 .threshold_post__feature .blog_post_category {
-    padding: 3px 12px;
-    background: white;
+    padding: 5px 12px;
+    background: var(--e-global-color-kadence4);
     border-radius: 100px;
     position: absolute;
     top: 13px;
     left: 13px;
     transition: 0.5s;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--e-global-color-primary);
     font-family: 'Inter', sans-serif;
@@ -59,7 +59,7 @@
     padding: 20px;
 }
 .blog_post_info_container .blog_post_title{
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.4em;
     font-weight: 600;
     color: var( --e-global-color-text );
@@ -67,8 +67,8 @@
     font-family: 'Inter', sans-serif;
 }
 .blog_post_info_container .blog_post_content {
-    color: var(--e-global-color-text);
-    font-size: 18px;
+    color: var(--e-global-color-kadence4);
+    font-size: 16px;
     font-weight: 400;
     margin: 10px 0;
     font-family: 'Inter', sans-serif;
@@ -78,21 +78,39 @@
 }
 .blog_post_info_container .blog_post_read_more_btn{
     display: flex;
+    align-items: center;
     gap: 10px;
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    background: #FFC70015;
+    padding: 10px 20px;
+    width: fit-content;
+    transition: all 0.3s;
+    border-radius: 9999px;
 }
-.blog_post_info_container .blog_post_read_more_btn a{
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 0.7em;
-    color: var(--e-global-color-secondary);
-    font-family: 'Inter', sans-serif;
+.blog_post_info_container .blog_post_read_more_btn:hover{
+    background-color: var(--e-global-color-primary);
+    color: var(--e-global-color-text);
+    box-shadow: 0px 25px 50px 12px rgba(255, 214.99999999999991, 0, 0.2);
+}
+.blog_post_info_container .blog_post_read_more_btn:hover.blog_post_read_more_btn a{
+   color: white; 
 }
 
-.blog_post_info_container .blog_post_read_more_btn svg{
-    font-size: 18px;
-    fill: var(--e-global-color-secondary) !important;
+.blog_post_info_container .blog_post_read_more_btn a{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--e-global-color-secondary);
+    font-family: 'Inter', sans-serif;
+   
+}
+
+.blog_post_info_container .blog_post_read_more_btn i{
+    font-size: 16px;
+    color: var(--e-global-color-secondary) !important;
+}
+.blog_post_info_container .blog_post_read_more_btn:hover.blog_post_read_more_btn i{
+   color: white !important; 
 }
 .blog_post_info_container .blog_post_author_wrapper{
     display: flex;
