@@ -13,13 +13,45 @@ get_header(); ?>
         </div>'
         <div class="custom-page-header-overlay"></div>
         <div class="entry-content-wrap site-container">
+            <!-- post categories -->
+            <span class="blog_post_category_wraper">
+
+                <?php
+                $categories = get_the_terms(get_the_ID(), 'category');
+                if ($categories) {
+                    foreach ($categories as $category):
+                        $link = get_term_link($category, 'category'); ?>
+                        <a class='blog_post_category'
+                            href="<?php echo esc_url($link) ?>"><?php echo esc_html($category->name) ?>
+                        </a>
+                    <?php endforeach;
+                }
+                ; ?>
+            </span>
             <h1 class="custom-page-title"> <?php echo esc_html(the_title()) ?></h1>
             <p class="custom-page-subtitle"> <?php echo esc_html(get_the_date(' F j, Y')) ?></p>
         </div>
     </div>
 
     <div class="site-container">
-        <div id="content" style="margin-top: 60px">
+        <div class="blog_post_info">
+            <!-- author infor     -->
+            <div class="author_info">
+
+
+            </div>
+            <!-- post content -->
+            <div>
+
+            </div>
+            <!-- article sharing icons facebook, twitter, linkedin, gmail -->
+            <div>
+
+            </div>
+            <!-- back to all post buton -->
+            <div>
+
+            </div>
 
 
 
