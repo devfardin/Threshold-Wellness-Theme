@@ -33,6 +33,103 @@
     text-decoration: none;
 
 }
-.threshold-sinlge-post .blog_post_info{
-    
+.threshold-sinlge-post .blog_post_info {
+    padding: 60px 0;
+}
+
+.threshold-sinlge-post .author_info {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.threshold-sinlge-post .author_info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.threshold-sinlge-post .author_info .author_details {
+    flex: 1;
+}
+.threshold-sinlge-post .author_info .author_details h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #222;
+}
+.threshold-sinlge-post .author_info .author_details p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+.threshold-sinlge-post .post_content {
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+.threshold-sinlge-post .post_content p {
+    margin-bottom: 20px;
+}
+.threshold-sinlge-post .post_content h2,
+.threshold-sinlge-post .post_content h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 30px 0 15px 0;
+    color: #222;
+}
+.threshold-sinlge-post .social_share {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.threshold-sinlge-post .social_share span {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-right: 10px;
+}
+.threshold-sinlge-post .social_share a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.threshold-sinlge-post .social_share a:hover {
+    background: var(--e-global-color-primary);
+    color: #fff;
+}
+.threshold-sinlge-post .back_to_posts {
+    padding-bottom: 40px;
+}
+.threshold-sinlge-post .back_to_posts a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--e-global-color-primary);
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+.threshold-sinlge-post .back_to_posts a:hover {
+    gap: 15px;
 }

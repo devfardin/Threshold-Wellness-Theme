@@ -35,26 +35,43 @@ get_header(); ?>
 
     <div class="site-container">
         <div class="blog_post_info">
-            <!-- author infor     -->
+            <!-- author info -->
             <div class="author_info">
-
-
+                <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
+                <div class="author_details">
+                    <h4><?php echo esc_html(get_the_author()); ?></h4>
+                    <p><?php echo esc_html(get_the_author_meta('description')); ?></p>
+                </div>
             </div>
+
             <!-- post content -->
-            <div>
-
-            </div>
-            <!-- article sharing icons facebook, twitter, linkedin, gmail -->
-            <div>
-
-            </div>
-            <!-- back to all post buton -->
-            <div>
-
+            <div class="post_content">
+                <?php the_content(); ?>
             </div>
 
+            <!-- social sharing -->
+            <div class="social_share">
+                <span>Share:</span>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink()); ?>" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=<?php echo esc_url(get_permalink()); ?>&text=<?php echo esc_attr(get_the_title()); ?>" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url(get_permalink()); ?>" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:?subject=<?php echo esc_attr(get_the_title()); ?>&body=<?php echo esc_url(get_permalink()); ?>">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
 
-
+            <!-- back to posts -->
+            <div class="back_to_posts">
+                <a href="<?php echo esc_url(get_post_type_archive_link('post')); ?>">
+                    <i class="fas fa-arrow-left"></i> Back to All Posts
+                </a>
+            </div>
         </div>
     </div>
 </section>
