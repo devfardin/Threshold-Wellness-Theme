@@ -102,7 +102,7 @@ class Custom_Page_Header {
         } elseif ( $bg_type === 'image' && $bg_image ) {
             echo '<div class="custom-page-header-bg" style="background-image: url(' . esc_url($bg_image) . ');"></div>';
         }
-        
+        echo '<div class="custom-page-header-overlay"></div>';
         echo '<div class="entry-content-wrap">';
         echo '<h1 class="custom-page-title">' . esc_html($title) . '</h1>';
         if ( $subtitle ) {

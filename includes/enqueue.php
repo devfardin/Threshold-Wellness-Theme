@@ -42,6 +42,14 @@ class ThresholdWellnessAssets {
         );
 
         wp_enqueue_style(
+            'single-blog-post',
+            THRESHOLD_WELLNESS_STYLE_URI . 'single-posts.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
+
+        wp_enqueue_style(
             'blog-posts',
             THRESHOLD_WELLNESS_STYLE_URI . 'blog-posts.css',
             [],
