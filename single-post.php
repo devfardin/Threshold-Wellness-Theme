@@ -37,10 +37,13 @@ get_header(); ?>
         <div class="blog_post_info">
             <!-- author info -->
             <div class="author_info">
-                <?php echo get_avatar(get_the_author_meta('ID'), 80); ?>
+                <?php $author_id = $post->post_author; ?>
+                <img src="<?php echo get_avatar_url($author_id); ?>" alt="<?php echo get_the_author_meta('display_name', $author_id); ?>">
                 <div class="author_details">
-                    <h4><?php echo esc_html(get_the_author()); ?></h4>
-                    <p><?php echo esc_html(get_the_author_meta('description')); ?></p>
+                    <h4>
+                        <?php echo get_the_author_meta('display_name', $author_id); ?>
+                    </h4>
+                    <p><?php echo get_the_author_meta('description', $author_id); ?></p>
                 </div>
             </div>
 
