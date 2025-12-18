@@ -11,11 +11,16 @@
 }
 .threshold-sinlge-post .custom-page-title  {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 30px;
     font-weight: 500;
     color: #fff;
     margin-bottom: 15px;
     line-height: 1.2;
+}
+@media only screen and (min-width:768px){
+    .threshold-sinlge-post .custom-page-title  {
+        font-size: 48px;
+    }
 }
 .threshold-sinlge-post .blog_post_category_wraper{
     display: flex;
