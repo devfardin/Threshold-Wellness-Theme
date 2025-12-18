@@ -1,4 +1,8 @@
-
+.wp-singular.vlog-template-default.single.single-vlog .item-at-start  .site-header-row-container-inner{
+    background: #00000021;
+}.wp-singular.vlog-template-default.single.single-vlog .item-at-start nav .primary-menu-container ul li a{
+    color: black;
+}
 
 .threshold-single-vlog {
     padding: 60px 0;
