@@ -94,20 +94,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 
-.blog_post_info_container .blog_post_read_more_btn a{
+.blog_post_info_container .learn_more_btn{
     font-size: 16px;
     font-weight: 500;
     color: var(--e-global-color-secondary);
     font-family: 'Inter', sans-serif;
     text-decoration: none;
-   
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+/* make a hover effice with right side animation */
+.blog_post_info_container .learn_more_btn:hover{
+    transform: translateX(10px);
 }
 
-.blog_post_info_container .blog_post_read_more_btn i{
+.blog_post_info_container .learn_more_btn i{
     font-size: 16px;
     color: var(--e-global-color-secondary) !important;
 }
@@ -121,7 +128,7 @@
 }
 
 .blog_post_author_wrapper .auther_display_name {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 400;
     color: rgb(48 49 52);
     font-family: 'Inter', sans-serif;

@@ -36,37 +36,40 @@ get_header();
                                     </a>
                                 </div>
                                 <!-- Post Info -->
-                                <div class="blog_post_info_container">
-                                    <!-- post title -->
-                                    <h1 class="blog_post_title">
-                                        <?php echo substr(get_the_title(), 0, 60) . '...'; ?>
-                                    </h1>
-                                    <!-- post content -->
-                                    <div class="blog_post_content_wrapper">
-                                        <p class="blog_post_content"> <?php
-                                        echo substr(get_the_content(), 0, 130) . '...'; ?>
-                                        </p>
-                                    </div>
-                                    <div class="blog_post_read_more_btn">
-                                        <a href="<?php echo get_the_permalink(); ?>">Read More</a>
-                                    </div>
-                                    <!-- post author and Date -->
-                                      <div class="post_author_date_wrapper">
-                                    <!-- post author -->
-                                    <?php $author_id = get_the_author_meta('ID'); ?>
-                                     <a href="<?php echo get_author_posts_url($author_id); ?>" class="blog_post_author_wrapper">
-                                        <img class='blog_post__author_avatar' src="<?php echo get_avatar_url($author_id) ?>"
-                                            alt="<?php echo get_the_author_meta('display_name', $author_id) ?>">
-
-                                        <h3 class='auther_display_name'>
-                                            <?php echo get_the_author_meta('display_name', $author_id); ?>
-                                        </h3>
-                                    </a>
+                                 <div class="blog_post_info_container">
                                     <div class="blog_post_date">
                                         <?php $post_time = get_post_time(); ?>
                                         <span> <?php echo date("d M Y", $post_time); ?> </span>
                                     </div>
-                                </div>
+                                    <!-- post title -->
+                                    <h1 class="blog_post_title">
+                                        <?php echo esc_html(substr(get_the_title(), 0, 50)) . '...'; ?>
+                                    </h1>
+                                    <!-- post content -->
+                                    <div class="blog_post_content_wrapper">
+                                        <p class="blog_post_content"> <?php
+                                        echo esc_html(substr(get_the_content(), 0, 100)) . '...'; ?>
+                                        </p>
+                                    </div>
+
+                                    <!-- post author and Date -->
+                                    <div class="post_author_learn_more_bnt">
+                                        <!-- post author -->
+                                        <?php $author_id = get_the_author_meta('ID'); ?>
+                                        <a href="<?php echo get_author_posts_url($author_id); ?>" class="blog_post_author_wrapper">
+                                            <h3 class='auther_display_name'>By
+                                                <?php echo get_the_author_meta('display_name', $author_id); ?>
+                                            </h3>
+                                        </a>
+                                        <a class="learn_more_btn" href="<?php echo get_the_permalink(); ?>">Read More
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15"
+                                                fill="none">
+                                                <path
+                                                    d="M10.22 13.7985C10.0795 13.6578 10.0007 13.4672 10.0007 13.2685C10.0007 13.0697 10.0795 12.8791 10.22 12.7385L15.19 7.76845H0.75C0.551088 7.76845 0.360322 7.68943 0.21967 7.54878C0.0790175 7.40813 0 7.21737 0 7.01845C0 6.81954 0.0790175 6.62878 0.21967 6.48812C0.360322 6.34747 0.551088 6.26845 0.75 6.26845H15.19L10.22 1.29845C10.1213 1.20678 10.0491 1.09018 10.0111 0.96093C9.97308 0.831681 9.97063 0.694572 10.004 0.564048C10.0374 0.433524 10.1053 0.314418 10.2007 0.219278C10.2961 0.124138 10.4154 0.0564872 10.546 0.0234531C10.6764 -0.00996352 10.8133 -0.0076322 10.9425 0.0302018C11.0717 0.0680358 11.1883 0.139974 11.28 0.238453L17.53 6.48845C17.6705 6.62908 17.7493 6.8197 17.7493 7.01845C17.7493 7.2172 17.6705 7.40783 17.53 7.54845L11.28 13.7985C11.1394 13.9389 10.9488 14.0178 10.75 14.0178C10.5512 14.0178 10.3606 13.9389 10.22 13.7985Z"
+                                                    fill="#FFC700" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                 </div>
                             </article>
                         <?php endwhile; ?>         <?php wp_reset_postdata(); ?>
