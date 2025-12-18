@@ -1,0 +1,185 @@
+.threshold_vlog_wrapper .threshold_vlog__row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    align-items: top;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+    .threshold_vlog_wrapper .threshold_vlog__row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .threshold_vlog_wrapper .threshold_vlog__row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+.threshold_vlog__row .threshold_vlog__inner_container {
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    background: rgb(255 255 255);
+    border: 1px solid rgb(255 255 255);
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.threshold_vlog__row .threshold_vlog__inner_container:hover{
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+}
+
+.threshold_vlog__row .threshold_vlog__feature {
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.threshold_vlog__feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+.threshold_vlog__feature .wp-post-image{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.threshold_vlog__inner_container:hover .wp-post-image {
+    transform: scale(1.10);
+}
+.threshold_vlog__feature .vlog_category {
+    padding: 5px 12px;
+    background: var(--e-global-color-secondary);
+    border-radius: 100px;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    transition: 0.5s;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--e-global-color-text);
+    font-family: 'Inter', sans-serif;
+    z-index: 2;
+}
+
+.threshold_vlog__feature .vlog_video_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Vlog info container */
+.threshold_vlog__inner_container .vlog_info_container {
+    padding: 15px 20px 20px 20px;
+}
+.vlog_info_container .vlog_date span{
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(48 49 52);
+    font-family: 'Inter', sans-serif;
+}
+.vlog_info_container .vlog_title{
+    font-size: 19px;
+    line-height: 1.4em;
+    font-weight: 600;
+    color: var( --e-global-color-text );
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+}
+.vlog_info_container .vlog_content {
+    color: var(--e-global-color-kadence4);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    font-family: 'Inter', sans-serif;
+}
+.vlog_info_container .vlog_content_wrapper p {
+    margin: 0;
+}
+
+.vlog_info_container .vlog_author_learn_more_bnt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.vlog_info_container .learn_more_btn{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--e-global-color-secondary);
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s;
+}
+/* make a hover effice with right side animation */
+.vlog_info_container .learn_more_btn:hover{
+    transform: translateX(10px);
+}
+
+.vlog_info_container .learn_more_btn svg{
+    transition: all 0.3s;
+}
+
+.vlog_navigation {
+    margin-top: 30px;
+    text-align: center;
+}
+.vlog_navigation a{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(48 49 52);
+    margin: 0px 10px;
+    font-family: 'Inter', sans-serif;
+}
+.vlog_navigation span{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--e-global-color-primary);
+    margin: 0px 10px;
+    font-family: 'Inter', sans-serif;
+}
+.vlog_navigation .current {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px 10px;
+    font-family: 'Inter', sans-serif;
+}
+.threshold_no_vlogs_message{
+    text-align: center;
+    padding: 40px 20px;
+}
+.threshold_no_vlogs_message h2{
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--e-global-color-text);
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+}
+.threshold_no_vlogs_message p{
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--e-global-color-text);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}

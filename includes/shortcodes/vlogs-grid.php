@@ -16,16 +16,16 @@ class Vlogs_grid
             'paged' => $paged,
         );
         $query = new \WP_Query($args); ?>
-        <section class="threshold_post_container">
-            <div class="threshold_post_wrapper">
+        <section class="threshold_vlog_container">
+            <div class="threshold_vlog_wrapper">
                 <?php if ($query->have_posts()): ?>
-                    <div class="threshold_post__row">
+                    <div class="threshold_vlog__row">
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
-                            <article class="threshold_post__inner_container">
+                            <article class="threshold_vlog__inner_container">
 
                                 <!-- Post Feature image -->
-                                <div class="threshold_post__feature">
+                                <div class="threshold_vlog__feature">
                                     <a href="<?php echo esc_attr(get_the_permalink()) ?>" rel="bookmark"
                                         aria-label="More about <?php echo esc_attr(get_the_title()); ?>">
                                         <?php esc_html(the_post_thumbnail('medium_large')) ?>
@@ -36,32 +36,40 @@ class Vlogs_grid
                                         $first_three_categories = array_slice($categories, 0, 1, false);
                                         foreach ($first_three_categories as $category):
                                             $link = get_term_link($category, 'video-category'); ?>
-                                            <a class='blog_post_category'
+                                            <a class='vlog_category'
                                                 href="<?php echo esc_url($link) ?>"><?php echo esc_html($category->name) ?> </a>
                                         <?php endforeach;
                                     }
                                     ; ?>
+                                    <div class="vlog_video_icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
+                                            fill="none">
+                                            <circle cx="32" cy="32" r="32" fill="#FFC700" fill-opacity="1" />
+                                            <path d="M26 20L46 32L26 44V20Z" fill="#000000" />
+                                        </svg>
+                                    </div>
                                 </div>
                                 <!-- Post Info -->
-                                <div class="blog_post_info_container">
-                                    <div class="blog_post_date">
+                                <div class="vlog_info_container">
+                                    <div class="vlog_date">
                                         <?php $post_time = get_post_time(); ?>
                                         <span> <?php echo date("d M Y", $post_time); ?> </span>
                                     </div>
                                     <!-- post title -->
-                                    <h1 class="blog_post_title">
-                                        <?php echo esc_html(substr(get_the_title(), 0, 50)) . '...'; ?>
+                                    <h1 class="vlog_title">
+                                        <?php echo esc_html(substr(get_the_title(), 0, 30)) . '...'; ?>
                                     </h1>
                                     <!-- post content -->
-                                    <div class="blog_post_content_wrapper">
-                                        <p class="blog_post_content"> <?php
+                                    <div class="vlog_content_wrapper">
+                                        <p class="vlog_content"> <?php
                                         echo esc_html(substr(get_the_content(), 0, 100)) . '...'; ?>
                                         </p>
                                     </div>
 
                                     <!-- post author and Date -->
-                                    <div class="post_author_learn_more_bnt">
-                                        <a class="learn_more_btn" href="<?php echo get_the_permalink(); ?>">Read More
+                                    <div class="vlog_author_learn_more_bnt">
+                                        <a class="learn_more_btn" href="<?php echo get_the_permalink(); ?>">
+                                            Watch Video
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15"
                                                 fill="none">
                                                 <path
@@ -75,7 +83,7 @@ class Vlogs_grid
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="blog_post_navigation" role="navigation">
+                    <div class="vlog_navigation" role="navigation">
                         <?php
                         $big = 999999999; // need an unlikely integer
                         $translated = __('', 'extracatchy'); // Supply translatable string
@@ -89,7 +97,7 @@ class Vlogs_grid
                     </div>
 
                 <?php else: ?>
-                    <div class='threshold_no_posts_message'>
+                    <div class='threshold_no_vlogs_message'>
                         <h2>No Vlogs to Display</h2>
                         <p>We’re creating new video content behind the scenes. Visit again soon to explore our latest moments.</p>
                     </div>
