@@ -42,7 +42,7 @@
 }
 .threshold_post__feature .blog_post_category {
     padding: 5px 12px;
-    background: var(--e-global-color-kadence4);
+    background: var(--e-global-color-secondary);
     border-radius: 100px;
     position: absolute;
     top: 13px;
@@ -50,7 +50,7 @@
     transition: 0.5s;
     font-size: 14px;
     font-weight: 500;
-    color: var(--e-global-color-primary);
+    color: var(--e-global-color-text);
     font-family: 'Inter', sans-serif;
 }
 
