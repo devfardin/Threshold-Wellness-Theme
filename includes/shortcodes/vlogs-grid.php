@@ -52,10 +52,32 @@ class Vlogs_grid
                                 <!-- Modal Overlay -->
                                 <div id="customModal-<?php echo get_the_ID(); ?>" class="modal-overlay">
                                     <div class="modal-box">
-                                        <button class="modal-close" id="closeModal-<?php echo get_the_ID(); ?>">&times;</button>
-                                        <h2><?php echo esc_html(get_the_title()); ?></h2>
+                                        <div class="modal_header">
+                                            <h2 class='modal_title'><?php echo esc_html(get_the_title()); ?></h2>
+                                            <button class="modal-close" id="closeModal-<?php echo get_the_ID(); ?>">
+                                                &times;
+                                            </button>
+                                        </div>
                                         <div class="modal-video-content">
-                                            <?php echo get_the_content(); ?>
+                                            <div class="video-container">
+                                                <?php
+                                                $youtube_url = get_post_meta(get_the_ID(), 'video-url', true);
+                                                if ($youtube_url):
+                                                    // Extract video ID from YouTube URL
+                                                    preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/', $youtube_url, $matches);
+                                                    $video_id = $matches[1] ?? '';
+                                                    if ($video_id):
+                                                        ?>
+                                                        <iframe width="100%" height="400"
+                                                            src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=-1" 
+                                                            frameborder="0" allow="accelerometer; clipboard-write;  picture-in-picture"
+                                                            allowfullscreen>
+                                                        </iframe>
+                                                        <?php
+                                                    endif;
+                                                endif;
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
