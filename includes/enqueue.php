@@ -80,5 +80,12 @@ class ThresholdWellnessAssets {
             THRESHOLD_WELLNESS_VERSION,
             true
         );
+        wp_enqueue_script(
+            'threshold-wellness-modal',
+            THRESHOLD_WELLNESS_SCRIPT_URI . 'modal.js',
+            ['jquery'],
+            THRESHOLD_WELLNESS_VERSION,
+            true
+        );
     }
 }

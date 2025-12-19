@@ -1,7 +1,11 @@
 .wp-singular.vlog-template-default.single.single-vlog .item-at-start  .site-header-row-container-inner{
     background: #00000021;
-}.wp-singular.vlog-template-default.single.single-vlog .item-at-start nav .primary-menu-container ul li a{
+}
+.wp-singular.vlog-template-default.single.single-vlog .item-at-start nav .primary-menu-container ul li a{
     color: black;
+}
+.wp-singular.vlog-template-default.single.single-vlog .item-at-start nav .primary-menu-container ul li a:hover{
+    color:var(--e-glogal-color-secondary);
 }
 
 .threshold-single-vlog {

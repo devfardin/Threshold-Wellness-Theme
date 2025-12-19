@@ -36,19 +36,31 @@ class Vlogs_grid
                                         $first_three_categories = array_slice($categories, 0, 1, false);
                                         foreach ($first_three_categories as $category):
                                             $link = get_term_link($category, 'video-category'); ?>
-                                            <a class='vlog_category'
-                                                href="<?php echo esc_url($link) ?>"><?php echo esc_html($category->name) ?> </a>
+                                            <a class='vlog_category' href="<?php echo esc_url($link) ?>"><?php echo esc_html($category->name) ?>
+                                            </a>
                                         <?php endforeach;
                                     }
                                     ; ?>
-                                    <div class="vlog_video_icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"
-                                            fill="none">
+                                    <div class="vlog_video_icon" id="openModal-<?php echo get_the_ID(); ?>">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
                                             <circle cx="32" cy="32" r="32" fill="#FFC700" fill-opacity="1" />
                                             <path d="M26 20L46 32L26 44V20Z" fill="#000000" />
                                         </svg>
                                     </div>
                                 </div>
+
+                                <!-- Modal Overlay -->
+                                <div id="customModal-<?php echo get_the_ID(); ?>" class="modal-overlay">
+                                    <div class="modal-box">
+                                        <button class="modal-close" id="closeModal-<?php echo get_the_ID(); ?>">&times;</button>
+                                        <h2><?php echo esc_html(get_the_title()); ?></h2>
+                                        <div class="modal-video-content">
+                                            <?php echo get_the_content(); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <!-- Post Info -->
                                 <div class="vlog_info_container">
                                     <div class="vlog_date">
