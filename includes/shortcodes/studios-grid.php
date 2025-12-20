@@ -33,66 +33,11 @@ class studios_grid
                                         aria-label="More about <?php echo esc_attr(get_the_title()); ?>">
                                         <?php esc_html(the_post_thumbnail('medium_large')) ?>
                                     </a>
-                                    <?php
-                                    $categories = get_the_terms(get_the_ID(), 'video-category');
-                                    if ($categories) {
-                                        $first_three_categories = array_slice($categories, 0, 1, false);
-                                        foreach ($first_three_categories as $category):
-                                            $link = get_term_link($category, 'video-category'); ?>
-                                            <a class='vlog_category' href="<?php echo esc_url($link) ?>"><?php echo esc_html($category->name) ?>
-                                            </a>
-                                        <?php endforeach;
-                                    }
-                                    ; ?>
-                                    <div class="vlog_video_icon" id="openModal-<?php echo get_the_ID(); ?>">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-                                            <circle cx="32" cy="32" r="32" fill="#FFC700" fill-opacity="1" />
-                                            <path d="M26 20L46 32L26 44V20Z" fill="#000000" />
-                                        </svg>
-                                    </div>
                                 </div>
-
-                                <!-- Modal Overlay -->
-                                <div id="customModal-<?php echo get_the_ID(); ?>" class="modal-overlay">
-                                    <div class="modal-box">
-                                        <div class="modal_header">
-                                            <h2 class='modal_title'><?php echo esc_html(get_the_title()); ?></h2>
-                                            <button class="modal-close" id="closeModal-<?php echo get_the_ID(); ?>">
-                                                &times;
-                                            </button>
-                                        </div>
-                                        <div class="modal-video-content">
-                                            <div class="video-container">
-                                                <?php
-                                                $youtube_url = get_post_meta(get_the_ID(), 'video-url', true);
-                                                if ($youtube_url):
-                                                    // Extract video ID from YouTube URL
-                                                    preg_match('/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/', $youtube_url, $matches);
-                                                    $video_id = $matches[1] ?? '';
-                                                    if ($video_id):
-                                                        ?>
-                                                        <iframe width="100%" height="400"
-                                                            src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=-1"
-                                                            frameborder="0"
-                                                            allow="autoplay; accelerometer; clipboard-write;  picture-in-picture"
-                                                            allowfullscreen>
-                                                        </iframe>
-                                                        <?php
-                                                    endif;
-                                                endif;
-                                                ?>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
 
                                 <!-- Post Info -->
                                 <div class="vlog_info_container">
-                                    <div class="vlog_date">
-                                        <?php $post_time = get_post_time(); ?>
-                                        <span> <?php echo date("d M Y", $post_time); ?> </span>
-                                    </div>
+
                                     <!-- post title -->
                                     <h1 class="vlog_title">
                                         <?php echo esc_html(substr(get_the_title(), 0, 30)) . '...'; ?>
@@ -106,8 +51,8 @@ class studios_grid
 
                                     <!-- post author and Date -->
                                     <div class="vlog_author_learn_more_bnt">
-                                        <a class="learn_more_btn" href="<?php echo get_the_permalink(); ?>">
-                                            Watch Video
+                                        <a class="learn_more_btn" href="<?php echo home_url('book-now'); ?>">
+                                            Book at This Location
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15"
                                                 fill="none">
                                                 <path
