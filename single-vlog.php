@@ -62,11 +62,17 @@ wp_enqueue_style('single-vlog', get_template_directory_uri() . '/assets/css/sing
                     <h1><?php the_title(); ?></h1>
                     <div class="vlog-date">
                         <?php $post_time = get_post_time(); ?>
-                        <span> <?php echo date("d M Y", $post_time); ?> </span>
+                        <span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <path d="M5 1v3M11 1v3M2 7h12" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <?php echo date("d M Y", $post_time); ?>
+                        </span>
                     </div>
                 </div>
 
-                <div class="vlog-content">
+                <div class="vlog-content-wrap">
                     <h2 class="content-heading">About this Video</h2>
                     <div class="content-text">
                         <?php the_content(); ?>
