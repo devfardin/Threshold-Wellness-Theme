@@ -19,8 +19,8 @@
 .modal-box {
   background: #ffffff;
   padding: 15px;
-  border-radius: 16px;
-  max-width: 700px;
+  border-radius: 14px;
+  max-width: 900px;
   width: 90%;
   position: relative;
   transform: translateY(20px);
@@ -29,7 +29,7 @@
 @media only screen and (min-width: 768px) {
   .modal-box {
     padding: 20px;
-    border-radius: 24px;
+    border-radius: 16px;
     width: 600px;
   }
 }
@@ -63,10 +63,12 @@
 /* Close Button */
 .modal-close {
   position: absolute;
-  top: 12px;
-  right: 15px;
-  background: none;
+  top: 0px;
+  right: 0px;
+  background: var(--e-global-color-primary);
   border: none;
-  font-size: 24px;
+  border-top-right-radius:14px ;
+  font-size: 30px;
+  padding: 5px 10px;
   cursor: pointer;
 }

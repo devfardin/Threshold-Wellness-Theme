@@ -70,7 +70,7 @@ class Vlogs_grid
                                                         ?>
                                                         <iframe width="100%" height="400"
                                                             src="https://www.youtube.com/embed/<?php echo esc_attr($video_id); ?>?autoplay=-1" 
-                                                            frameborder="0" allow="accelerometer; clipboard-write;  picture-in-picture"
+                                                            frameborder="0" allow="autoplay; accelerometer; clipboard-write;  picture-in-picture"
                                                             allowfullscreen>
                                                         </iframe>
                                                         <?php
