@@ -71,6 +71,13 @@ class ThresholdWellnessAssets {
             'all'
         );
         wp_enqueue_style(
+            'studios',
+            THRESHOLD_WELLNESS_STYLE_URI . 'studios-grid.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
+        wp_enqueue_style(
             'modal',
             THRESHOLD_WELLNESS_STYLE_URI . 'modal.css',
             [],

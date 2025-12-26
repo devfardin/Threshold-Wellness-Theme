@@ -6,7 +6,7 @@ class studios_grid
 {
     public function __construct()
     {
-        // create short for vlogs grid
+        // create shortcode for studios grid
         add_shortcode("threshold_rander_studios", array($this, "threshold_studios_grid"));
     }
     public function threshold_studios_grid()
@@ -19,16 +19,16 @@ class studios_grid
             'paged' => $paged,
         );
         $query = new \WP_Query($args); ?>
-        <section class="threshold_vlog_container">
-            <div class="threshold_vlog_wrapper">
+        <section class="threshold_studio_container">
+            <div class="threshold_studio_wrapper">
                 <?php if ($query->have_posts()): ?>
-                    <div class="threshold_vlog__row">
+                    <div class="threshold_studio__row">
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
-                            <article class="threshold_vlog__inner_container">
+                            <article class="threshold_studio__inner_container">
 
                                 <!-- Post Feature image -->
-                                <div class="threshold_vlog__feature">
+                                <div class="threshold_studio__feature">
                                     <a href="<?php echo esc_attr(get_the_permalink()) ?>" rel="bookmark"
                                         aria-label="More about <?php echo esc_attr(get_the_title()); ?>">
                                         <?php esc_html(the_post_thumbnail('medium_large')) ?>
@@ -36,21 +36,26 @@ class studios_grid
                                 </div>
 
                                 <!-- Post Info -->
-                                <div class="vlog_info_container">
+                                <div class="studio_info_container">
 
                                     <!-- post title -->
-                                    <h1 class="vlog_title">
+                                    <h1 class="studio_title">
                                         <?php echo esc_html(substr(get_the_title(), 0, 30)) . '...'; ?>
                                     </h1>
                                     <!-- post content -->
-                                    <div class="vlog_content_wrapper">
-                                        <p class="vlog_content"> <?php
+                                    <div class="studio_content_wrapper">
+                                        <p class="studio_content"> <?php
                                         echo esc_html(substr(get_the_content(), 0, 100)) . '...'; ?>
                                         </p>
                                     </div>
 
+                                    <!-- studios features -->
+                                    <div class>
+
+                                    </div>
+
                                     <!-- post author and Date -->
-                                    <div class="vlog_author_learn_more_bnt">
+                                    <div class="studio_author_learn_more_bnt">
                                         <a class="learn_more_btn" href="<?php echo home_url('book-now'); ?>">
                                             Book at This Location
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" viewBox="0 0 18 15"
@@ -66,7 +71,7 @@ class studios_grid
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
-                    <div class="vlog_navigation" role="navigation">
+                    <div class="studio_navigation" role="navigation">
                         <?php
                         $big = 999999999; // need an unlikely integer
                         $translated = __('', 'extracatchy'); // Supply translatable string
@@ -80,9 +85,9 @@ class studios_grid
                     </div>
 
                 <?php else: ?>
-                    <div class='threshold_no_vlogs_message'>
-                        <h2>No Vlogs to Display</h2>
-                        <p>We’re creating new video content behind the scenes. Visit again soon to explore our latest moments.</p>
+                    <div class='threshold_no_studios_message'>
+                        <h2>No Studios to Display</h2>
+                        <p>We're adding new studio locations. Visit again soon to explore our latest facilities.</p>
                     </div>
                     <?php
                 endif;
