@@ -42,6 +42,28 @@ class studios_grid
                                     <h1 class="studio_title">
                                         <?php echo esc_html(substr(get_the_title(), 0, 30)) . '...'; ?>
                                     </h1>
+                                    <!-- Studio location -->
+                                    <div class="studio_location_wrapper">
+                                        <!-- map icon -->
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_51_2)">
+                                                <path
+                                                    d="M10.0716 -0.00718689C5.97187 -0.00718689 2.5 3.48438 2.5 7.62063C2.5 11.9519 6.52406 16.3813 9.23094 19.4944C9.24125 19.5069 9.67877 19.9928 10.2178 19.9928H10.2656C10.8047 19.9928 11.2391 19.5069 11.25 19.4944C13.7903 16.5741 17.5 11.7591 17.5 7.62063C17.5 3.48438 14.7919 -0.00718689 10.0716 -0.00718689ZM10.3222 18.6559C10.3003 18.6778 10.2684 18.7022 10.2403 18.7225C10.2115 18.7028 10.1803 18.6778 10.1572 18.656L9.83029 18.28C7.26406 15.3359 3.75 11.3044 3.75 7.62063C3.75 4.16344 6.645 1.2425 10.0716 1.2425C14.3397 1.2425 16.25 4.44563 16.25 7.62063C16.25 10.4172 14.2553 14.1303 10.3222 18.6559ZM10.0219 3.7775C7.95092 3.7775 6.27186 5.45656 6.27186 7.5275C6.27186 9.59844 7.95092 11.2775 10.0219 11.2775C12.0928 11.2775 13.7719 9.59844 13.7719 7.5275C13.7719 5.45656 12.0928 3.7775 10.0219 3.7775ZM10.0219 10.0275C8.64342 10.0275 7.49309 8.87875 7.49309 7.5C7.49309 6.12156 8.61465 5 9.99309 5C11.3725 5 12.4931 6.12156 12.4931 7.5C12.4937 8.87875 11.4012 10.0275 10.0219 10.0275Z"
+                                                    fill="#FFC700" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_51_2">
+                                                    <rect width="20" height="20" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+
+                                        <p class="studio_location"> <?php
+                                        $studio_location = get_post_meta(get_the_ID(), 'location', true);
+                                        echo esc_html($studio_location); ?>
+                                        </p>
+                                    </div>
+
                                     <!-- post content -->
                                     <div class="studio_content_wrapper">
                                         <p class="studio_content"> <?php
@@ -50,9 +72,24 @@ class studios_grid
                                     </div>
 
                                     <!-- studios features -->
-                                    <div class>
-
+                                    <div class="studio_features_wrapper">
+                                        <?php 
+                                        $studio_features = get_field('features');
+                                        if (!empty($studio_features) && is_array($studio_features)):
+                                            foreach ($studio_features as $feature): 
+                                                if (!empty($feature['items'])): ?>
+                                                    <div class="studio_features">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                                                        </svg>
+                                                        <span><?php echo esc_html($feature['items']); ?></span>
+                                                    </div>
+                                                <?php endif;
+                                            endforeach;
+                                        endif;
+                                        ?>
                                     </div>
+
 
                                     <!-- post author and Date -->
                                     <div class="studio_author_learn_more_bnt">

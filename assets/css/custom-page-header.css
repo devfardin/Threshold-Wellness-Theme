@@ -77,18 +77,12 @@
         font-size: 40px;
     }
     .custom-page-subtitle {
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 480px) {
     .custom-page-header {
         height: 350px;
-    }
-    .custom-page-title {
-        font-size: 32px;
-    }
-    .custom-page-subtitle {
-        font-size: 14px;
     }
 }
