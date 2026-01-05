@@ -10,7 +10,7 @@
     padding-bottom: 30px;
 }
 .threshold-sinlge-post .custom-page-title  {
-    font-family: 'Playfair Display', serif;
+    font-family: "Arial", Sans-serif;
     font-size: 30px;
     font-weight: 500;
     color: #fff;
@@ -85,7 +85,7 @@
 }
 .threshold-sinlge-post .post_content h2,
 .threshold-sinlge-post .post_content h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Arial", Sans-serif;
     margin: 30px 0 15px 0;
     color: #222;
 }

@@ -51,7 +51,7 @@ class Custom_Page_Header {
                     'label' => 'Background Type',
                     'name' => 'background_type',
                     'type' => 'select',
-                    'choices' => ['image' => 'Image', 'video' => 'Video'],
+                    'choices' => ['image' => 'Image', 'video' => 'Video', 'url' => 'URL'],
                     'default_value' => 'image',
                     'conditional_logic' => [[['field' => 'field_enable_custom_header', 'operator' => '==', 'value' => '1']]],
                 ],
@@ -72,9 +72,29 @@ class Custom_Page_Header {
                     'mime_types' => 'mp4,webm',
                     'conditional_logic' => [[['field' => 'field_enable_custom_header', 'operator' => '==', 'value' => '1'], ['field' => 'field_background_type', 'operator' => '==', 'value' => 'video']]],
                 ],
+                [
+                    'key' => 'field_background_video_url',
+                    'label' => 'Background Video URL',
+                    'name' => 'background_video_url',
+                    'type' => 'url',
+                    'placeholder' => 'https://example.com/video.mp4',
+                    'conditional_logic' => [[['field' => 'field_enable_custom_header', 'operator' => '==', 'value' => '1'], ['field' => 'field_background_type', 'operator' => '==', 'value' => 'url']]],
+                ],
             ],
             'location' => [[['param' => 'post_type', 'operator' => '==', 'value' => 'page']]],
         ]);
+    }
+
+    public function get_embed_url($url) {
+        if (strpos($url, 'youtube.com') !== false || strpos($url, 'youtu.be') !== false) {
+            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/', $url, $matches);
+            return isset($matches[1]) ? 'https://www.youtube.com/embed/' . $matches[1] . '?autoplay=1&mute=1&loop=1&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1' : false;
+        }
+        if (strpos($url, 'vimeo.com') !== false) {
+            preg_match('/vimeo\.com\/(\d+)/', $url, $matches);
+            return isset($matches[1]) ? 'https://player.vimeo.com/video/' . $matches[1] . '?autoplay=1&muted=1&loop=1&background=1&controls=0' : false;
+        }
+        return $url;
     }
 
     public function disable_page_title( $value ) {
@@ -94,11 +114,19 @@ class Custom_Page_Header {
         $bg_type = get_field('background_type') ?: 'image';
         $bg_image = get_field('page_background');
         $bg_video = get_field('background_video');
+        $bg_video_url = get_field('background_video_url');
 
-        echo '<div class="custom-page-header">';
+        echo '<div class="custom-page-header ' . esc_attr(get_the_title()) . '">';
         
-        if ( $bg_type === 'video' && $bg_video ) {
-            echo '<video autoplay muted loop playsinline><source src="' . esc_url($bg_video) . '" type="video/mp4"></video>';
+        if ( ($bg_type === 'video' && $bg_video) || ($bg_type === 'url' && $bg_video_url) ) {
+            $video_src = $bg_type === 'url' ? $bg_video_url : $bg_video;
+            $embed_url = $this->get_embed_url($video_src);
+            
+            if ($embed_url !== $video_src) {
+                echo '<iframe src="' . esc_url($embed_url) . '" frameborder="0" allow="autoplay; fullscreen" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"></iframe>';
+            } else {
+                echo '<video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;"><source src="' . esc_url($video_src) . '" type="video/mp4"></video>';
+            }
         } elseif ( $bg_type === 'image' && $bg_image ) {
             echo '<div class="custom-page-header-bg" style="background-image: url(' . esc_url($bg_image) . ');"></div>';
         }

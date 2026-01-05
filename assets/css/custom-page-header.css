@@ -43,12 +43,15 @@
 }
 
 .custom-page-title {
-    font-family: 'Playfair Display', serif;
+    font-family: "Arial", Sans-serif;
     font-size: 70px;
     font-weight: 600;
     color: #fff;
     margin-bottom: 15px;
     line-height: 1.2;
+}
+.Experiences .custom-page-title {
+    color: var(--e-global-color-primary);
 }
 
 .custom-page-subtitle {
