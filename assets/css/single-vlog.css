@@ -128,6 +128,9 @@
     font-weight: 400;
     color: var(--e-global-color-kadence4);
     line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 

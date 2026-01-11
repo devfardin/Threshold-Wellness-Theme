@@ -3,7 +3,7 @@
  * Custom Page Header Manager for Kadence Theme
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( constant_name: 'ABSPATH' ) ) {
     exit;
 }
 

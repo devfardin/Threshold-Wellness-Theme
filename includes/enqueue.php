@@ -84,6 +84,20 @@ class ThresholdWellnessAssets {
             THRESHOLD_WELLNESS_VERSION,
             'all'
         );
+        wp_enqueue_style(
+            'testimonials',
+            THRESHOLD_WELLNESS_STYLE_URI . 'testimonials.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
+        wp_enqueue_style(
+            'footer_1',
+            THRESHOLD_WELLNESS_STYLE_URI . 'footer.css',
+            [],
+            THRESHOLD_WELLNESS_VERSION,
+            'all'
+        );
     }
     
     public function enqueue_scripts() {

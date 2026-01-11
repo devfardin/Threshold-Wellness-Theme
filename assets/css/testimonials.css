@@ -1,0 +1,129 @@
+.byteitfarm_revews_wrapper .byteitfarm_revews__row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    align-items: top;
+    justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+    .byteitfarm_revews_wrapper .byteitfarm_revews__row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .byteitfarm_revews_wrapper .byteitfarm_revews__row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+.byteitfarm_revews__row .byteitfarm_innter_container {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background: rgb(255 255 255);
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 15px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+.byteitfarm_revews__row .byteitfarm_innter_container:hover{
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-10px);
+}
+
+
+/* reviws innter container */
+.byteitfarm_innter_container .client_rating {
+    font-size: 25px;
+}
+.byteitfarm_innter_container .client_rating .fill {
+    color: #FBBC04;
+}
+.byteitfarm_innter_container .client_rating .out {
+    color: #919191;
+}
+
+/* reviews style */
+.byteitfarm_innter_container .client_comment p{
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6em;
+    color: var(--e-global-color-text );
+}
+
+@media only screen and (min-width: 768px) {
+.byteitfarm_innter_container .client_comment p{
+    font-size: 18px;
+    line-height: 1.6em;
+}
+}
+
+
+.byteitfarm_innter_container .reviews_author{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.byteitfarm_innter_container .reviews_author .author_feature img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.byteitfarm_innter_container .reviews_author .author_name_degnation{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: start;
+}
+.byteitfarm_innter_container .reviews_author .author_name_degnation .author_name {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--e-global-color-kadence4);
+}
+@media only screen and (min-width: 768px) {
+.byteitfarm_innter_container .reviews_author .author_name_degnation .author_name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--e-global-color-kadence4);
+}
+}
+.byteitfarm_innter_container .reviews_author .author_name_degnation .author_degnation {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--e-global-color-6d1e87d);
+}
+
+/* Reviews post navigation */
+.blog_post_navigation {
+    margin-top: 30px;
+    text-align: center;
+}
+.blog_post_navigation a{
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(48 49 52);
+    margin: 0px 10px;
+}
+.blog_post_navigation span{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--e-global-color-primary);
+    margin: 0px 10px;
+}
+.blog_post_navigation .current {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px 10px;
+}
+.iris_no_post_message{
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}

@@ -24,6 +24,7 @@ class ThresholdWellnessFunctions {
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'blog-posts.php');
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'vlogs-grid.php');
         require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'studios-grid.php');
+        require_once( THRESHOLD_WELLNESS_SHORTCODE_DIR . 'testimonials.php');
     }
     
     public function init() {
@@ -32,6 +33,7 @@ class ThresholdWellnessFunctions {
        new ThresholdBlogPostsShortcode();
        new Vlogs_grid();
        new studios_grid();
+       new testimonials();
     }
 }
 
